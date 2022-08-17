@@ -42,8 +42,9 @@ export const Order = () => {
                 stock_id: params.stockId
             }
             const response = await api.creatOrder(request)
-            downloadFile(response["key"], "key")
-            downloadFile(response["request"], "request")
+            downloadFile(response["key"], "key.key")
+            downloadFile(response["request"], "request.csr")
+            downloadFile(response["certificate"], "certificate.cer")
 
         } catch (error) {
             console.log(error)
@@ -70,6 +71,7 @@ export const Order = () => {
             const response = await api.creatOrder(request)
             downloadFile(response["key"], "key.key")
             downloadFile(response["request"], "request.csr")
+            downloadFile(response["certificate"], "certificate.cer")
 
         } catch (error) {
             console.log(error)
